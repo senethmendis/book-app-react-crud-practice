@@ -15,7 +15,7 @@
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+This is  how to install all the necessary dependencies .
 * npm
   ```sh
   npm install npm@latest -g
@@ -23,7 +23,7 @@ This is an example of how to list things you need to use the software and how to
 
   ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_installing and setting up your app._
 
 1. install mysql client / server (optional XAMP or WAMP)
 2. Donload the ``` db.sql ``` file and run it to create tables
