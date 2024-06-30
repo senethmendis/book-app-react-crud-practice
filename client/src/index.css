@@ -9,3 +9,7 @@ img {
 button {
   @apply py-1 px-2 cursor-pointer border w-full rounded-md;
 }
+
+input {
+  @apply w-full border px-2 py-2 rounded-md;
+}

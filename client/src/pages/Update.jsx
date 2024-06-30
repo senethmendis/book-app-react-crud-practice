@@ -31,8 +31,8 @@ const Update = () => {
 
   return (
     <>
-      <h1>Update Books</h1>
-      <div className="form">
+      <h1 className="text-3xl font-bold">Update Books</h1>
+      <div className="form flex flex-col gap-2 justify-center items-center w-1/2">
         <input
           type="text"
           placeholder="Title"
@@ -58,7 +58,7 @@ const Update = () => {
           onChange={handleChange}
         />
 
-        <button onClick={handleClick}>Add book</button>
+        <button onClick={handleClick}>Update book</button>
       </div>
     </>
   );

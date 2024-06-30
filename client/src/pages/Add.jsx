@@ -27,7 +27,8 @@ const Add = () => {
   };
 
   return (
-    <div className="form">
+    <div className="w-1/2 flex flex-col justify-center items-center gap-2">
+      <h1 className="font-bold text-2xl mb-3">Add an New Book</h1>
       <input
         type="text"
         placeholder="Title"
@@ -48,12 +49,14 @@ const Add = () => {
       />
       <input
         type="text"
-        placeholder="Cover"
+        placeholder="add cover url"
         name="cover"
         onChange={handleChange}
       />
 
-      <button onClick={handleClick}>Add book</button>
+      <button className="bg-blue-500" onClick={handleClick}>
+        Add book
+      </button>
     </div>
   );
 };
