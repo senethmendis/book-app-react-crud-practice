@@ -7,7 +7,7 @@ img {
 }
 
 button {
-  @apply py-1 px-2 cursor-pointer border w-full rounded-md;
+  @apply py-1 px-2 cursor-pointer border w-1/2 rounded-md;
 }
 
 input {
