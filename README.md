@@ -26,7 +26,7 @@ This is  how to install all the necessary dependencies .
 _installing and setting up your app._
 
 1. install mysql client / server (optional XAMP or WAMP)
-2. Donload the ``` db.sql ``` file and run it to create tables
+2. Donload the ``` booker.sql ``` file and run it to create tables
 3. Clone the repo
    ```sh
    https://github.com/senethmendis/chat-app-react-firebase.git
