@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Books = () => {
-  const [books, setBooks] = useState("");
+  const [books, setBooks] = useState([]);
 
   useEffect(() => {
     const fetchAllBooks = async () => {
       try {
         const res = await axios.get("http://localhost:3001/books");
-
         setBooks(res.data);
       } catch (error) {
         console.log(error.message);
@@ -17,7 +17,44 @@ const Books = () => {
     fetchAllBooks();
   }, []);
 
-  return <div>Books</div>;
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete("http://localhost:3001/books/" + id);
+      window.location.reload();
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+  return (
+    <div>
+      <h1>Book Shop</h1>
+      <div className="books flex gap-2">
+        {books.map((book) => (
+          <div
+            key={book.id}
+            className="book flex-1 flex flex-col gap-3 items-center"
+          >
+            {book.cover && <img src="" alt="" />}
+            <h2 className="text-2xl font-bold">{book.title}</h2>
+            <p>{book.description}</p>
+            <span>{book.price}</span>
+            <button
+              className="bg-red-500"
+              onClick={() => handleDelete(book.id)}
+            >
+              Detele
+            </button>
+            <button className="bg-green-500">
+              <Link to={`/update/${book.id}`}>Update</Link>
+            </button>
+          </div>
+        ))}
+      </div>
+      <button className="my-5 bg-blue-500 w-1/2">
+        <Link to="/add">Add New Book</Link>
+      </button>
+    </div>
+  );
 };
 
 export default Books;

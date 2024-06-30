@@ -41,12 +41,44 @@ app.get("/books", (req, res) => {
 });
 
 app.post("/books", (req, res) => {
-  const q = "INSERT INTO books (`title`,`description`,`cover`) VALUES (?)";
-  const values = [req.body.title, req.body.description, req.body.cover];
+  const q =
+    "INSERT INTO books (`title`,`description`,`price`,`cover`) VALUES (?)";
+  const values = [
+    req.body.title,
+    req.body.description,
+    req.body.price,
+    req.body.cover,
+  ];
 
   db.query(q, [values], (err, data) => {
     if (err) return err;
     return res.json("created Shit!");
+  });
+});
+
+app.delete("/books/:id", (req, res) => {
+  const bookId = req.params.id;
+  const q = "DELETE FROM books WHERE id = ?";
+  db.query(q, [bookId], (err, data) => {
+    if (err) return err;
+    return res.json("Deleted!");
+  });
+});
+
+app.put("/books/:id", (req, res) => {
+  const bookId = req.params.id;
+  const q =
+    "UPDATE books SET `title` = ?,`description`=?,`price`=?,`cover`=? WHERE id=?";
+
+  const values = [
+    req.body.title,
+    req.body.description,
+    req.body.price,
+    req.body.cover,
+  ];
+  db.query(q, [...values, bookId], (err, data) => {
+    if (err) return err;
+    return res.json("Updated!");
   });
 });
 

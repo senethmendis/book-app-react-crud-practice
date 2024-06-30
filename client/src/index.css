@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+img {
+  @apply w-[200px] h-[300px] object-cover;
+}
+
+button {
+  @apply py-1 px-2 cursor-pointer border w-full rounded-md;
+}

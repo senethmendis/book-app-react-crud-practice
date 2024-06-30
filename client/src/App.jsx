@@ -5,12 +5,12 @@ import Update from "./pages/Update";
 
 function App() {
   return (
-    <div className="App">
+    <div className="h-screen px-[100px] flex flex-col items-center justify-center text-center">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Books />} />
           <Route path="/add" element={<Add />} />
-          <Route path="/update" element={<Update />} />
+          <Route path="/update/:id" element={<Update />} />
         </Routes>
       </BrowserRouter>
     </div>
